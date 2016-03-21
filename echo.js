@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --harmony --use-strict --harmony_destructuring --harmony_default_parameters
 
 require('./helper')
 let fs = require('fs').promise
@@ -6,7 +6,7 @@ let fs = require('fs').promise
 function* echo() {
     // Use 'yield' in here
     // Your implementation here
-    console.log(yield fs.readFile(__filename, console.log))
+    process.stdout.write(process.argv[2]+'\n')
 }
 
 module.exports = echo
